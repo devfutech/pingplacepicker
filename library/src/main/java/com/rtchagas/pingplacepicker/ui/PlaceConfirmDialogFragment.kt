@@ -103,8 +103,7 @@ class PlaceConfirmDialogFragment : AppCompatDialogFragment(), PingKoinComponent 
                             place.latLng?.longitude,
                             PingPlacePicker.androidApiKey)
             Picasso.get().load(staticMapUrl).into(contentView.ivPlaceMap)
-        }
-        else {
+        } else {
             contentView.ivPlaceMap.visibility = View.GONE
         }
     }
@@ -116,8 +115,7 @@ class PlaceConfirmDialogFragment : AppCompatDialogFragment(), PingKoinComponent 
 
             viewModel.getPlacePhoto(place.photoMetadatas!![0]).observe(this,
                     Observer { handlePlacePhotoLoaded(contentView, it) })
-        }
-        else {
+        } else {
             contentView.ivPlacePhoto.visibility = View.GONE
         }
     }
@@ -128,8 +126,7 @@ class PlaceConfirmDialogFragment : AppCompatDialogFragment(), PingKoinComponent 
             TransitionManager.beginDelayedTransition(contentView as ViewGroup)
             contentView.ivPlaceMap.visibility = View.VISIBLE
             contentView.ivPlacePhoto.setImageBitmap(result.data)
-        }
-        else {
+        } else {
             contentView.ivPlaceMap.visibility = View.GONE
         }
     }

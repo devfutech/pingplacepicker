@@ -42,6 +42,7 @@ class PingPlacePicker private constructor() {
         @Throws(GooglePlayServicesNotAvailableException::class)
         fun build(activity: Activity): Intent {
 
+            // support 16 API
             AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
             initKoin(activity.application)
