@@ -3,6 +3,7 @@ package com.rtchagas.pingplacepicker
 import android.app.Activity
 import android.app.Application
 import android.content.Intent
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException
@@ -16,6 +17,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.dsl.koinApplication
 
 class PingPlacePicker private constructor() {
+
 
     class IntentBuilder {
 
@@ -39,6 +41,8 @@ class PingPlacePicker private constructor() {
 
         @Throws(GooglePlayServicesNotAvailableException::class)
         fun build(activity: Activity): Intent {
+
+            AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
             initKoin(activity.application)
 

@@ -68,11 +68,11 @@ class PlaceConfirmDialogFragment : AppCompatDialogFragment(), PingKoinComponent 
 
         builder.setTitle(R.string.picker_place_confirm)
                 .setView(getContentView(activity!!))
-                .setPositiveButton(android.R.string.ok) { dialog, which ->
+                .setPositiveButton(android.R.string.ok) { _, which ->
                     confirmListener?.onPlaceConfirmed(place)
                     dismiss()
                 }
-                .setNegativeButton(R.string.picker_place_confirm_cancel) { dialog, which ->
+                .setNegativeButton(R.string.picker_place_confirm_cancel) { _, which ->
                     // Just dismiss here...
                     dismiss()
                 }
