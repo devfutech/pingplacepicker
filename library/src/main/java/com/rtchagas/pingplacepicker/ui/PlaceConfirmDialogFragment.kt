@@ -102,7 +102,7 @@ class PlaceConfirmDialogFragment : AppCompatDialogFragment(), PingKoinComponent 
                     .format(place.latLng?.latitude,
                             place.latLng?.longitude,
                             PingPlacePicker.androidApiKey)
-            Picasso.get().load(staticMapUrl).into(contentView.ivPlaceMap)
+            Picasso.with(context!!).load(staticMapUrl).into(contentView.ivPlaceMap)
         } else {
             contentView.ivPlaceMap.visibility = View.GONE
         }
